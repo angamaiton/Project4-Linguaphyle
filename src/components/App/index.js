@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 
 import './style.css';
-import Header from '../Header/Header';
+import Header from '../Header';
 
 class App extends Component {
   // static propTypes = {}
@@ -14,6 +14,7 @@ class App extends Component {
     return (
       <div className={cx('App', className)} {...props}>
         <Header />
+        {this.props.children}
       </div>
     );
   }
