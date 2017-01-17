@@ -6,7 +6,7 @@ export default class Index extends Component {
     return (
       <div className="home">
         <Col xs={12} md={8}>
-          <PageHeader>Test</PageHeader>
+          <PageHeader>Home</PageHeader>
         </Col>
       </div>
     );

@@ -1,9 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { Grid } from 'react-bootstrap';
 import './style.css';
 
 import Header from '../Header';
 
-export default class Layout extends React.Component {
+export default class Layout extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
   };
@@ -13,7 +14,9 @@ export default class Layout extends React.Component {
       <div className="app-container">
         <Header />
         <div className="app-content">
-          {this.props.children}
+          <Grid>
+            {this.props.children}
+          </Grid>
         </div>
       </div>
     );
