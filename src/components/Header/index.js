@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
-export default class Header extends React.Component {
+export default class Header extends Component {
   render() {
     return (
       <Navbar inverse collapseOnSelect fixedTop>
