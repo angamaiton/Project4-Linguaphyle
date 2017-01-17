@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 import './style.css';
 import Header from '../Header';
+import Layout from '../Layout';
 
 class App extends Component {
   // static propTypes = {}
@@ -14,7 +15,9 @@ class App extends Component {
     return (
       <div className={cx('App', className)} {...props}>
         <Header />
-        {this.props.children}
+        <Layout>
+          {this.props.children}
+        </Layout>
       </div>
     );
   }
