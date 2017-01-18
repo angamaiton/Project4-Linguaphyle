@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router';
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import './style.css';
 
 export default class Header extends Component {
@@ -8,30 +9,33 @@ export default class Header extends Component {
     return (
       <Navbar inverse collapseOnSelect fixedTop>
         <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="/">Linguaphyle</Link>
-          </Navbar.Brand>
+          <Navbar.Brand>Linguaphyle</Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
         <Nav>
-          <NavItem eventKey={1} href="/"><Link to="/">Home</Link></NavItem>
-          <NavItem eventKey={2} href="#"><Link to="/about">About</Link></NavItem>
+          <IndexLinkContainer to="/">
+              <NavItem eventKey={1}>Home</NavItem>
+          </IndexLinkContainer>
+          <LinkContainer to="/about">
+              <NavItem eventKey={2}>About</NavItem>
+          </LinkContainer>
           <NavDropdown eventKey={3} title="Languages" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>
-              <Link to="/languages">Language list</Link>
-            </MenuItem>
-            <MenuItem eventKey={3.2}>
-              <Link to="/linguistics">Linguistics</Link>
-            </MenuItem>
-            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey={3.3}>Separated link</MenuItem>
+            <LinkContainer to="/languages">
+              <MenuItem eventKey={3.1}>Language List</MenuItem>
+            </LinkContainer>
+            <LinkContainer to="/linguistics">
+              <MenuItem eventKey={3.2}>Linguistics</MenuItem>
+            </LinkContainer>
           </NavDropdown>
         </Nav>
         <Nav pullRight>
-          <NavItem eventKey={1} href="#">Link Right</NavItem>
-          <NavItem eventKey={2} href="#">Link Right</NavItem>
+          <LinkContainer to="/login">
+            <MenuItem eventKey={4}>Log In</MenuItem>
+          </LinkContainer>
+          <LinkContainer to="/register">
+            <MenuItem eventKey={5}>Sign Up</MenuItem>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
       </Navbar>
